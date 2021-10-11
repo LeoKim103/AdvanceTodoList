@@ -45,7 +45,7 @@ class DataController: ObservableObject {
 
             for itemCounter in 1...10 {
                 let item = Item(context: viewContext)
-                item.title = "Item: \(itemCounter)"
+                item.title = "Item \(itemCounter)"
                 item.creationDate = Date()
                 item.completed = Bool.random()
                 item.project = project // setting the item belong to a specific project
