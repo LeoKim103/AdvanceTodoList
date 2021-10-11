@@ -11,6 +11,9 @@
 		2E9F574C27141E12004DD4A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9F574B27141E12004DD4A7 /* ContentView.swift */; };
 		2E9F574E27141E14004DD4A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E9F574D27141E14004DD4A7 /* Assets.xcassets */; };
 		2E9F575127141E14004DD4A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E9F575027141E14004DD4A7 /* Preview Assets.xcassets */; };
+		2E9F575D271420B2004DD4A7 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E9F575C271420B2004DD4A7 /* Colors.xcassets */; };
+		2E9F5760271420F4004DD4A7 /* ProjectAndItem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E9F575E271420F4004DD4A7 /* ProjectAndItem.xcdatamodeld */; };
+		2E9F57652714234D004DD4A7 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9F57642714234D004DD4A7 /* CoreDataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,10 @@
 		2E9F574B27141E12004DD4A7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2E9F574D27141E14004DD4A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E9F575027141E14004DD4A7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2E9F575C271420B2004DD4A7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		2E9F575F271420F4004DD4A7 /* ProjectAndItem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProjectAndItem.xcdatamodel; sourceTree = "<group>"; };
+		2E9F57642714234D004DD4A7 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
+		2E9F576727142EF3004DD4A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +58,15 @@
 		2E9F574827141E12004DD4A7 /* AdvanceTodoList */ = {
 			isa = PBXGroup;
 			children = (
+				2E9F576727142EF3004DD4A7 /* Info.plist */,
+				2E9F57582714202C004DD4A7 /* Configurations */,
+				2E9F575727142022004DD4A7 /* Activities */,
+				2E9F57592714203B004DD4A7 /* Extension */,
+				2E9F575B27142066004DD4A7 /* IAPs */,
+				2E9F575A27142050004DD4A7 /* Localizations */,
 				2E9F574927141E12004DD4A7 /* AdvanceTodoListApp.swift */,
 				2E9F574B27141E12004DD4A7 /* ContentView.swift */,
-				2E9F574D27141E14004DD4A7 /* Assets.xcassets */,
+				2E9F57642714234D004DD4A7 /* CoreDataController.swift */,
 				2E9F574F27141E14004DD4A7 /* Preview Content */,
 			);
 			path = AdvanceTodoList;
@@ -67,6 +80,68 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		2E9F575727142022004DD4A7 /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				2E9F576327142248004DD4A7 /* Awards */,
+				2E9F576227142233004DD4A7 /* Projects */,
+				2E9F57612714222A004DD4A7 /* Home */,
+			);
+			path = Activities;
+			sourceTree = "<group>";
+		};
+		2E9F57582714202C004DD4A7 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				2E9F574D27141E14004DD4A7 /* Assets.xcassets */,
+				2E9F575C271420B2004DD4A7 /* Colors.xcassets */,
+				2E9F575E271420F4004DD4A7 /* ProjectAndItem.xcdatamodeld */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		2E9F57592714203B004DD4A7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		2E9F575A27142050004DD4A7 /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Localizations;
+			sourceTree = "<group>";
+		};
+		2E9F575B27142066004DD4A7 /* IAPs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IAPs;
+			sourceTree = "<group>";
+		};
+		2E9F57612714222A004DD4A7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2E9F576227142233004DD4A7 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Projects;
+			sourceTree = "<group>";
+		};
+		2E9F576327142248004DD4A7 /* Awards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Awards;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +149,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E9F575427141E14004DD4A7 /* Build configuration list for PBXNativeTarget "AdvanceTodoList" */;
 			buildPhases = (
+				2E9F5766271426DD004DD4A7 /* SwiftLint */,
 				2E9F574227141E12004DD4A7 /* Sources */,
 				2E9F574327141E12004DD4A7 /* Frameworks */,
 				2E9F574427141E12004DD4A7 /* Resources */,
@@ -125,12 +201,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E9F575D271420B2004DD4A7 /* Colors.xcassets in Resources */,
 				2E9F575127141E14004DD4A7 /* Preview Assets.xcassets in Resources */,
 				2E9F574E27141E14004DD4A7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E9F5766271426DD004DD4A7 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2E9F574227141E12004DD4A7 /* Sources */ = {
@@ -139,6 +237,8 @@
 			files = (
 				2E9F574C27141E12004DD4A7 /* ContentView.swift in Sources */,
 				2E9F574A27141E12004DD4A7 /* AdvanceTodoListApp.swift in Sources */,
+				2E9F57652714234D004DD4A7 /* CoreDataController.swift in Sources */,
+				2E9F5760271420F4004DD4A7 /* ProjectAndItem.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +372,7 @@
 				DEVELOPMENT_TEAM = H2ZL74Y28H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AdvanceTodoList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -302,6 +403,7 @@
 				DEVELOPMENT_TEAM = H2ZL74Y28H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AdvanceTodoList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -343,6 +445,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2E9F575E271420F4004DD4A7 /* ProjectAndItem.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2E9F575F271420F4004DD4A7 /* ProjectAndItem.xcdatamodel */,
+			);
+			currentVersion = 2E9F575F271420F4004DD4A7 /* ProjectAndItem.xcdatamodel */;
+			path = ProjectAndItem.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2E9F573E27141E12004DD4A7 /* Project object */;
 }
