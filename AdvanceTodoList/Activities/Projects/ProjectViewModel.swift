@@ -12,6 +12,7 @@ extension ProjectView {
     class ViewModel: NSObject, ObservableObject, NSFetchedResultsControllerDelegate {
         let dataController: DataController
 
+        var sortOrder = Item.SortOrder.optimized
         let showClosedProjects: Bool
 
         private let projectController: NSFetchedResultsController<Project>
@@ -39,6 +40,37 @@ extension ProjectView {
                 projects = projectController.fetchedObjects ?? []
             } catch {
                 print("Failed to fetch our projects")
+            }
+        }
+
+        func addProject() {
+            let project = Project(context: dataController.container.viewContext)
+            project.closed = false
+            project.creationDate = Date()
+            dataController.save()
+        }
+
+        func addItem(to project: Project) {
+            let item = Item(context: dataController.container.viewContext)
+            item.priority = 2
+            item.completed = false
+            item.project = project
+            item.creationDate = Date()
+            dataController.save()
+        }
+
+        func delete(_ offsets: IndexSet, from project: Project) {
+            let allItems = project.projectItems(using: sortOrder)
+            for offset in offsets {
+                let item = allItems[offset]
+                dataController.delete(item)
+            }
+            dataController.save()
+        }
+
+        func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+            if let newProjects = controller.fetchedObjects as? [Project] {
+                projects = newProjects
             }
         }
     }

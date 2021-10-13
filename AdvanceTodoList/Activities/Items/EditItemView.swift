@@ -29,8 +29,8 @@ struct EditItemView: View {
     var body: some View {
         Form {
             Section(header: Text("Basic settings")) {
-                TextField("Item name", text: $title.onChange(update))
-                TextField("Description", text: $detail.onChange(update))
+                TextField(NSLocalizedString("Item name", comment: ""), text: $title.onChange(update))
+                TextField(NSLocalizedString("Description", comment: ""), text: $detail.onChange(update))
             }
             Section(header: Text("Priority")) {
                 Picker("Priority", selection: $priority.onChange(update)) {

@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 extension Project {
     var projectTitle: String {
-        title ?? "New Project"
+        title ?? NSLocalizedString("New Project", comment: "Create a new project")
     }
 
     var projectDetail: String {
@@ -21,9 +22,11 @@ extension Project {
     }
 
     var projectItems: [Item] {
-        let itemsArray = items?.allObjects as? [Item] ?? []
+        items?.allObjects as? [Item] ?? []
+    }
 
-        return itemsArray.sorted { first, second in
+    var projectItemsDefaultSorted: [Item] {
+         projectItems.sorted { first, second in
 
             // Put completed item at the end of the list,
             // Because we care about them less.
@@ -55,6 +58,12 @@ extension Project {
         return Double(completedItems.count) / Double(originalItems.count)
     }
 
+    var label: LocalizedStringKey {
+        LocalizedStringKey(
+            "\(projectTitle), \(projectItems.count) items, \(completionAmount * 100, specifier: "%g")% complete."
+        )
+    }
+
     static var example: Project {
         let controller = DataController(inMemory: true)
         let viewContext = controller.container.viewContext
@@ -66,6 +75,27 @@ extension Project {
         project.creationDate = Date()
 
         return project
+    }
 
+    static let colors = [
+        "Pink", "Purple", "Red", "Orange", "Gold", "Green", "Teal",
+        "Light Blue", "Dark Blue", "Midnight", "Dark Gray", "Gray"
+    ]
+
+    func projectItems<Value: Comparable>(sortedBy keyPath: KeyPath<Item, Value>) -> [Item] {
+        projectItems.sorted {
+            $0[keyPath: keyPath] < $1[keyPath: keyPath]
+        }
+    }
+
+    func projectItems(using sortOrder: Item.SortOrder) -> [Item] {
+        switch sortOrder {
+        case .optimized:
+            return projectItemsDefaultSorted
+        case .creationDate:
+            return projectItems(sortedBy: \Item.itemCreationDate)
+        case .title:
+            return projectItems(sortedBy: \Item.itemTitle)
+        }
     }
 }

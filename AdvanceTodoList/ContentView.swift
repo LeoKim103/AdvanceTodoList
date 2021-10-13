@@ -13,7 +13,7 @@ struct ContentView: View {
 
     var body: some View {
         TabView(selection: $selectedView) {
-            HomeView()
+            HomeView(dataController: dataController)
                 .tag(HomeView.tag)
                 .tabItem {
                     Image(systemName: "house")
@@ -32,6 +32,13 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "checkmark")
                     Text("Closed")
+                }
+
+            AwardsView()
+                .tag(AwardsView.tag)
+                .tabItem {
+                    Image(systemName: "rosette")
+                    Text("Awards")
                 }
         }
     }

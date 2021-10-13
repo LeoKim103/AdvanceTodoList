@@ -79,12 +79,43 @@ class DataController: ObservableObject {
 
     func deleteAll() {
         let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = Item.fetchRequest()
-        let batchDeleteRequest1 = NSBatchDeleteRequest(fetchRequest: fetchRequest1)
-        _ = try? container.viewContext.execute(batchDeleteRequest1)
+        delete(fetchRequest1)
 
         let fetchRequest2: NSFetchRequest<NSFetchRequestResult> = Project.fetchRequest()
-        let batchDeleteRequest2 = NSBatchDeleteRequest(fetchRequest: fetchRequest2)
-        _ = try? container.viewContext.execute(batchDeleteRequest2)
+        delete(fetchRequest2)
     }
 
+    func delete(_ fetchRequest: NSFetchRequest<NSFetchRequestResult>) {
+        let batchDeleteRequest1 = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        batchDeleteRequest1.resultType = .resultTypeObjectIDs
+
+        if let delete = try? container.viewContext.execute(batchDeleteRequest1) as? NSBatchDeleteResult {
+            let changes = [NSDeletedObjectsKey: delete.result as? [NSManagedObjectID] ?? []]
+            NSManagedObjectContext.mergeChanges(fromRemoteContextSave: changes, into: [container.viewContext])
+        }
+    }
+
+    func count<T>(for fetchRequest: NSFetchRequest<T>) -> Int {
+        (try? container.viewContext.count(for: fetchRequest)) ?? 0
+    }
+
+    func hasEarned(award: Award) -> Bool {
+        switch award.criterion {
+        case "items":
+            // return true if they added a certain number of items
+            let fetchRequest: NSFetchRequest<Item> = NSFetchRequest(entityName: "Item")
+            let awardCount = count(for: fetchRequest)
+            return awardCount >= award.value
+
+        case "completed":
+            // return true if they completed a certain amount of items
+            let fetchRequest: NSFetchRequest<Item> = NSFetchRequest(entityName: "Item")
+            fetchRequest.predicate = NSPredicate(format: "completed = true")
+            let awardCount = count(for: fetchRequest)
+            return awardCount >= award.value
+
+        default:
+            return false
+        }
+    }
 }
