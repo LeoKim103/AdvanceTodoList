@@ -7,16 +7,36 @@
 
 import CoreData
 import SwiftUI
+import StoreKit
 
 class DataController: ObservableObject {
+
+    /// The lone cloudkit container used to store all our data
     let container: NSPersistentCloudKitContainer
+
+    // The UserDefaults suite where we're saving user data
+    let defaults: UserDefaults
+
+    /// Load and saves whether our premium unlock hsa been purchase
+    var fullVersionUnlocked: Bool {
+        get {
+            defaults.bool(forKey: "fullVersionUnlocked")
+        }
+
+        set {
+            defaults.set(newValue, forKey: "fullVersionUnlocked")
+        }
+    }
 
     /// Initializes a data controller, either in memory (for temporary use such as testing and preventing),
     /// or on permanent storage (for use in regular app runs).
     ///
     /// Defaults to permanent storage
     /// - Parameter inMemory: Whether to store this data in temporary memory or not
-    init(inMemory: Bool = false) {
+    /// - Parameter defaults: The UserDefaults suite where the user data should be stored 
+    init(inMemory: Bool = false, defaults: UserDefaults = .standard) {
+        self.defaults = defaults
+
         container = NSPersistentCloudKitContainer(name: "ProjectAndItem")
 
         // For testing and previewing purposed, we create a temporary
