@@ -29,6 +29,9 @@ struct ItemRowView: View {
         } else if item.priority == 3 {
             return Image(systemName: "exclamationmark.triangle")
                 .foregroundColor(Color(project.projectColor))
+        } else if item.priority == 2 {
+            return Image(systemName: "exclamationmark")
+                .foregroundColor(Color(project.projectColor))
         } else {
             return Image(systemName: "checkmark.circle")
                 .foregroundColor(.clear)

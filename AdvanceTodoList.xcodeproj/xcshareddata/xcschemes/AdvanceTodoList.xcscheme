@@ -26,8 +26,44 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "2E9F574527141E12004DD4A7"
+            BuildableName = "AdvanceTodoList.app"
+            BlueprintName = "AdvanceTodoList"
+            ReferencedContainer = "container:AdvanceTodoList.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2E8F81E22719687100F7ACE6"
+               BuildableName = "AdvanceTodoListTests.xctest"
+               BlueprintName = "AdvanceTodoListTests"
+               ReferencedContainer = "container:AdvanceTodoList.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2EC8D8E12719C92100D406AD"
+               BuildableName = "AdvanceTodoListUITests.xctest"
+               BlueprintName = "AdvanceTodoListUITests"
+               ReferencedContainer = "container:AdvanceTodoList.xcodeproj">
+            </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "AdvanceTodoListUITestsLaunchTests">
+               </Test>
+            </SkippedTests>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

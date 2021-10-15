@@ -37,7 +37,7 @@ class DataController: ObservableObject {
     init(inMemory: Bool = false, defaults: UserDefaults = .standard) {
         self.defaults = defaults
 
-        container = NSPersistentCloudKitContainer(name: "ProjectAndItem")
+        container = NSPersistentCloudKitContainer(name: "ProjectAndItem", managedObjectModel: Self.model)
 
         // For testing and previewing purposed, we create a temporary
         // in-memory database by writing to /dev/null so our data is
@@ -50,6 +50,13 @@ class DataController: ObservableObject {
             if let error = error {
                 fatalError("Fatal error loading store: \(error.localizedDescription)")
             }
+
+            #if DEBUG
+            if CommandLine.arguments.contains("enable-testing") {
+                self.deleteAll()
+                UIView.setAnimationsEnabled(false)
+            }
+            #endif
         }
     }
 
@@ -85,6 +92,18 @@ class DataController: ObservableObject {
             fatalError()
         }
         return dataController
+    }()
+
+    static let model: NSManagedObjectModel = {
+        guard let url = Bundle.main.url(forResource: "ProjectAndItem", withExtension: "momd") else {
+            fatalError("Failed to load model from file")
+        }
+
+        guard let managedObjectModel = NSManagedObjectModel(contentsOf: url) else {
+            fatalError("Failed to load model file")
+        }
+
+        return managedObjectModel
     }()
 
     func save() {
@@ -127,7 +146,7 @@ class DataController: ObservableObject {
             let awardCount = count(for: fetchRequest)
             return awardCount >= award.value
 
-        case "completed":
+        case "complete":
             // return true if they completed a certain amount of items
             let fetchRequest: NSFetchRequest<Item> = NSFetchRequest(entityName: "Item")
             fetchRequest.predicate = NSPredicate(format: "completed = true")
