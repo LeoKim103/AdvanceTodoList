@@ -28,41 +28,57 @@ struct EditItemView: View {
 
     var body: some View {
         Form {
-            Section(header: Text("Basic settings")) {
-                TextField(NSLocalizedString("Item name", comment: ""), text: $title.onChange(update))
-                TextField(NSLocalizedString("Description", comment: ""), text: $detail.onChange(update))
-            }
-            Section(header: Text("Priority")) {
-                Picker("Priority", selection: $priority.onChange(update)) {
-                    Text("Low").tag(1)
-                    Text("Medium").tag(2)
-                    Text("High").tag(3)
-                }
-                .pickerStyle(SegmentedPickerStyle())
-            }
+            basicSettingSection
 
-            Section {
-                Toggle("Mark Completed", isOn: $completed.onChange(update))
-            }
+            prioritySelectionSection
+
+            markCompletedSection
         }
         .navigationTitle("Edit Item")
         .onDisappear(perform: update)
         .onDisappear(perform: dataController.save)
     }
 
-    func update() {
-        item.project?.objectWillChange.send()
-
-        item.title = title
-        item.detail = detail
-        item.priority = Int16(priority)
-        item.completed = completed
-    }
 }
 
 struct EditItemView_Previews: PreviewProvider {
     static var previews: some View {
         EditItemView(item: Item.example)
             .environmentObject(DataController())
+    }
+}
+
+extension EditItemView {
+    private var basicSettingSection: some View {
+        Section(header: Text("Basic settings")) {
+            TextField(NSLocalizedString("Item name", comment: ""), text: $title.onChange(update))
+            TextField(NSLocalizedString("Description", comment: ""), text: $detail.onChange(update))
+        }
+    }
+
+    private var prioritySelectionSection: some View {
+        Section(header: Text("Priority")) {
+            Picker("Priority", selection: $priority.onChange(update)) {
+                Text("Low").tag(1)
+                Text("Medium").tag(2)
+                Text("High").tag(3)
+            }
+            .pickerStyle(SegmentedPickerStyle())
+        }
+    }
+
+    private var markCompletedSection: some View {
+        Section {
+            Toggle("Mark Completed", isOn: $completed.onChange(update))
+        }
+    }
+
+    private func update() {
+        item.project?.objectWillChange.send()
+
+        item.title = title
+        item.detail = detail
+        item.priority = Int16(priority)
+        item.completed = completed
     }
 }

@@ -44,14 +44,22 @@ struct AwardsView: View {
             .navigationTitle("Awards")
         }
         .alert(isPresented: $showingAwardDetails, content: getAwardAlert)
-
     }
+}
 
-    func color(for award: Award) -> Color {
+struct AwardsView_Previews: PreviewProvider {
+    static var previews: some View {
+        AwardsView()
+            .environmentObject(DataController())
+    }
+}
+
+extension AwardsView {
+    private func color(for award: Award) -> Color {
         dataController.hasEarned(award: award) ? Color(award.color) : Color.secondary.opacity(0.5)
     }
 
-    func getAwardAlert() -> Alert {
+    private func getAwardAlert() -> Alert {
         if dataController.hasEarned(award: selectedAward) {
             return Alert(
                 title: Text("Unlocked: \(selectedAward.name)"),
@@ -63,12 +71,5 @@ struct AwardsView: View {
                 message: Text(selectedAward.description),
                 dismissButton: .default(Text("Ok")))
         }
-    }
-}
-
-struct AwardsView_Previews: PreviewProvider {
-    static var previews: some View {
-        AwardsView()
-            .environmentObject(DataController())
     }
 }

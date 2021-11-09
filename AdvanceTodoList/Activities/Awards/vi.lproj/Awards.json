@@ -1,0 +1,162 @@
+[
+    {
+        "name": "Những bước đi đầu tiên",
+        "description": "Thêm tác vụ đầu tiên",
+        "color": "Light Blue",
+        "criterion": "items",
+        "value": 1,
+        "image": "figure.walk"
+    },
+    {
+        "name": "Một khởi đầu tốt",
+        "description": "Thêm 10 tác vụ.",
+        "color": "Light Blue",
+        "criterion": "items",
+        "value": 10,
+        "image": "hand.thumbsup.fill"
+    },
+    {
+        "name": "Tiến xa hơn",
+        "description": "Thêm 20 tác vụ.",
+        "color": "Light Blue",
+        "criterion": "items",
+        "value": 20,
+        "image": "tray.and.arrow.up.fill"
+    },
+    {
+        "name": "Tăng tốc",
+        "description": "Thêm 50 tác vụ.",
+        "color": "Light Blue",
+        "criterion": "items",
+        "value": 50,
+        "image": "speedometer"
+    },
+    {
+        "name": "Tạo đột biến",
+        "description": "Thêm 100 tác vụ.",
+        "color": "Light Blue",
+        "criterion": "items",
+        "value": 100,
+        "image": "dot.radiowaves.left.and.right"
+    },
+    {
+        "name": "Hiệu suất cao",
+        "description": "Thêm 250 tác vụ.",
+        "color": "Light Blue",
+        "criterion": "items",
+        "value": 250,
+        "image": "square.stack.3d.up.fill"
+    },
+    {
+        "name": "Hiệu suất của một siêu sao",
+        "description": "Thêm 500 tác vụ.",
+        "color": "Light Blue",
+        "criterion": "items",
+        "value": 500,
+        "image": "star.circle.fill"
+    },
+    {
+        "name": "Hiệu suất của một nhà vô địch",
+        "description": "Thêm 1000 tác vụ.",
+        "color": "Light Blue",
+        "criterion": "items",
+        "value": 1000,
+        "image": "crown.fill"
+    },
+    {
+        "name": "Hoàn thành nhiệm vụ",
+        "description": "Hoàn thành tác vụ đầu tiên.",
+        "color": "Orange",
+        "criterion": "complete",
+        "value": 1,
+        "image": "checkmark.shield.fill"
+    },
+    {
+        "name": "Quẩy lên",
+        "description": "Hoàn thành 10 tác vụ.",
+        "color": "Orange",
+        "criterion": "complete",
+        "value": 10,
+        "image": "guitars.fill"
+    },
+    {
+        "name": "Cũng nhiều rồi đấy",
+        "description": "Hoàn thành 20 tác vụ.",
+        "color": "Orange",
+        "criterion": "complete",
+        "value": 20,
+        "image": "20.square.fill"
+    },
+    {
+        "name": "Chất!",
+        "description": "Hoàn thành 50 tác vụ.",
+        "color": "Orange",
+        "criterion": "complete",
+        "value": 50,
+        "image": "target"
+    },
+    {
+        "name": "Bay cao",
+        "description": "Hoàn thành 100 tác vụ.",
+        "color": "Orange",
+        "criterion": "complete",
+        "value": 100,
+        "image": "airplane.circle.fill"
+    },
+    {
+        "name": "Không gì có thể ngăn cản!",
+        "description": "Hoàn thành 250 tác vụ.",
+        "color": "Orange",
+        "criterion": "complete",
+        "value": 250,
+        "image": "flame.fill"
+    },
+    {
+        "name": "Chuyên gia xử lí vấn đề",
+        "description": "Hoàn thành 500 tác vụ.",
+        "color": "Orange",
+        "criterion": "complete",
+        "value": 500,
+        "image": "text.badge.checkmark"
+    },
+    {
+        "name": "Boom!",
+        "description": "Hoàn thành 1000 tác vụ.",
+        "color": "Orange",
+        "criterion": "complete",
+        "value": 1000,
+        "image": "bolt.circle.fill"
+    },
+    {
+        "name": "Tin nhắn đầu",
+        "description": "Bạn đăng một tin nhắn vào nhóm trò chuyện",
+        "color": "Purple",
+        "criterion": "chat",
+        "value": 1,
+        "image": "person.fill"
+    },
+    {
+        "name": "Nói chuyện thường xuyên",
+        "description": "Bạn đã gửi 10 tin nhắn vào nhóm trò chuyện.",
+        "color": "Purple",
+        "criterion": "chat",
+        "value": 10,
+        "image": "message.fill"
+    },
+    {
+        "name": "Loa phường",
+        "description": "Bạn đã gửi 100 tin nhắn vào nhóm trò chuyện.",
+        "color": "Purple",
+        "criterion": "chat",
+        "value": 100,
+        "image": "arrow.up.heart.fill"
+    },
+    {
+        "name": "Sự ủng hộ",
+        "description": "Bạn đã mua bản premium của ứng dụng này.",
+        "color": "Green",
+        "criterion": "unlock",
+        "value": 0,
+        "image": "dollarsign.square.fill"
+    }
+]

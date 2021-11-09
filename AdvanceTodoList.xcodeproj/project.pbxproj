@@ -111,6 +111,9 @@
 		2EC8D8E22719C92100D406AD /* AdvanceTodoListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdvanceTodoListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EC8D8E42719C92100D406AD /* AdvanceTodoListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvanceTodoListUITests.swift; sourceTree = "<group>"; };
 		2EC8D8E62719C92100D406AD /* AdvanceTodoListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvanceTodoListUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2EDEB459273AA8BC00E9F283 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = vi; path = vi.lproj/Awards.json; sourceTree = "<group>"; };
+		2EDEB45A273AA8BC00E9F283 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2EDEB45B273AA8BC00E9F283 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = vi; path = vi.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		2EF655D72715B4BC005DAC5D /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		2EF655DB2715B831005DAC5D /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
 		2EF655DD2715B90D005DAC5D /* AwardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsView.swift; sourceTree = "<group>"; };
@@ -390,7 +393,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					2E8F81E22719687100F7ACE6 = {
 						CreatedOnToolsVersion = 13.0;
@@ -413,6 +416,7 @@
 				en,
 				Base,
 				hu,
+				vi,
 			);
 			mainGroup = 2E9F573D27141E12004DD4A7;
 			productRefGroup = 2E9F574727141E12004DD4A7 /* Products */;
@@ -558,6 +562,7 @@
 			children = (
 				2EF655E62716A7CE005DAC5D /* en */,
 				2EF655E82716A7D4005DAC5D /* hu */,
+				2EDEB45A273AA8BC00E9F283 /* vi */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -567,6 +572,7 @@
 			children = (
 				2EF655EA2716A80F005DAC5D /* en */,
 				2EF655EC2716A812005DAC5D /* hu */,
+				2EDEB45B273AA8BC00E9F283 /* vi */,
 			);
 			name = Localizable.stringsdict;
 			sourceTree = "<group>";
@@ -576,6 +582,7 @@
 			children = (
 				2EF655EE2716BC83005DAC5D /* en */,
 				2EF655F02716BC85005DAC5D /* hu */,
+				2EDEB459273AA8BC00E9F283 /* vi */,
 			);
 			name = Awards.json;
 			sourceTree = "<group>";
@@ -633,6 +640,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -694,6 +702,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

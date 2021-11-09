@@ -23,7 +23,7 @@ struct UnlockView: View {
                 ProgressView("Loading...")
             case .purchased:
                 Text("Thank you!")
-            case .defferred:
+            case .deferred:
                 Text("Thank you! Your request is pending approval, but you can carry on using the app in the main time")
             }
 

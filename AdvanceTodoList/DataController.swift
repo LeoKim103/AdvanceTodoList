@@ -9,15 +9,17 @@ import CoreData
 import SwiftUI
 import StoreKit
 
+/// An environment singleton responsible for managing our CoreData stacks, including handling saving,
+/// counting fetch request. tracking awards, and dealing with sample data
 class DataController: ObservableObject {
 
-    /// The lone cloudkit container used to store all our data
+    /// The lone CloudKit container used to store all our data
     let container: NSPersistentCloudKitContainer
 
-    // The UserDefaults suite where we're saving user data
+    /// The UserDefaults suite where we're saving user data
     let defaults: UserDefaults
 
-    /// Load and saves whether our premium unlock hsa been purchase
+    /// Load and saves whether our premium unlock has been purchase
     var fullVersionUnlocked: Bool {
         get {
             defaults.bool(forKey: "fullVersionUnlocked")
@@ -28,7 +30,7 @@ class DataController: ObservableObject {
         }
     }
 
-    /// Initializes a data controller, either in memory (for temporary use such as testing and preventing),
+    /// Initialises a data controller, either in memory (for temporary use such as testing and preventing),
     /// or on permanent storage (for use in regular app runs).
     ///
     /// Defaults to permanent storage
@@ -51,6 +53,7 @@ class DataController: ObservableObject {
                 fatalError("Fatal error loading store: \(error.localizedDescription)")
             }
 
+            // start with no saved data during UI testing
             #if DEBUG
             if CommandLine.arguments.contains("enable-testing") {
                 self.deleteAll()
@@ -60,6 +63,8 @@ class DataController: ObservableObject {
         }
     }
 
+    /// Creates example projects and items to make manual testing easier
+    /// - Throws: An NSError sent from calling save() on NSManagedObjectContext
     func createSampleData() throws {
         let viewContext = container.viewContext
 
@@ -106,6 +111,9 @@ class DataController: ObservableObject {
         return managedObjectModel
     }()
 
+    /// Save our CoreData context iff there are changes. This silently ignores
+    /// any errors caused by saving, but this should be fine because our
+    /// attributes are optional 
     func save() {
         if container.viewContext.hasChanges {
             try? container.viewContext.save()

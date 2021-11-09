@@ -1,0 +1,103 @@
+"Delete" = "Xoá";
+"OK" = "OK";
+
+"Home" = "Trang chủ";
+"Open" = "Mở";
+"Closed" = "Đóng";
+"Awards" = "Giải thưởng";
+
+"Up next" = "Tiếp theo";
+"More to explore" = "Khám phá thêm";
+
+"Open Projects" = "Dự án mở";
+"Closed Projects" = "Dự án hoàn thành";
+"Add Projects" = "Thêm dự án";
+"Add Project" = "Thêm dự án";
+
+
+
+
+// a button that shows a menu with the following item
+"Sort" = "Sắp xếp";
+"Sort items" = "Sắp xếp tác vụ";
+"Optimized" = "Tối ưu hoá";
+"Title" = "Tên";
+
+"Are you sure you want to delete this project? You will also delete all the items it contains." = "Bạn có muốn xoá dự án này? Khi xoá một dự án thì các tác vụ trong dự án đó cũng sẽ được xoá bỏ.";
+
+"Basic setting" = "Thiết lập cơ bản";
+
+"Basic settings" = "Thiết lập cơ bản";
+
+
+"Closing a project moves it from the Open to Closed tab; deleting it removes the project completely." = "Đóng một dự án sẽ di chuyển nó từ mục 'Mở' sang 'Đã hoàn thành'; lựa chọn xoá dự án sẽ loại bỏ lưu trữ hoàn toàn dự án đó.";
+
+
+"Creation Date" = "Ngày khởi tạo";
+
+"Custom project Color" = "Tuỳ chỉnh thẻ màu dự án";
+
+"Delete project?" = "Xoá dự án?";
+
+"High" = "Cao";
+
+"Low" = "Thấp";
+
+"Medium" = "Trung bình";
+
+"Priority" = "Mức độ ưu tiên";
+
+"There is nothing here right now." = "Hiện chưa có dự án nào trong danh sách";
+
+
+"Add New Item" = "Thêm tác vụ";
+"Edit Item" = "Chỉnh sửa tác vụ";
+"Mark Completed" = "Đánh dấu hoàn thành";
+"Edit Project" = "Chỉnh sửa dự án";
+"Close this project" = "Đóng dự án";
+"Reopen this project" = "Mở lại dự án";
+"Delete this project" = "Xoá dự án";
+
+"New Project" = "Dự án mới";
+"New Item" = "Tác vụ mới";
+
+"Item name" = "Tên tác vụ";
+"Description" = "Nội dung";
+"Project name" = "Tên dự án";
+"Description of this project" = "Nội dung dự án";
+
+"Please select something from the menu to begin" = "Vui lòng chọn một dự án để bắt đầu";
+
+"Unlocked: %@" = "Đã mở khoá: %@";
+"Locked" = "Chưa mở khoá";
+"%@, %lld items, %g%% complete." = "%@, %lld tác vụ, %g%% hoàn thành.";
+
+"Select a project color" = "Chọn màu cho dự án";
+"Pink" = "Hồng";
+"Purple" = "Tím";
+"Red" = "Đỏ";
+"Orange" = "Cam";
+"Gold" = "Vàng ánh kim";
+"Green" = "Xanh lá";
+"Teal" = "Xanh lục bảo";
+"Light Blue" = "Xanh nhạt";
+"Dark Blue" = "Xanh đậm";
+"Midnight" = "Xanh bóng đêm";
+"Dark Gray" = "Xám đen";
+"Gray" = "Xám";
+
+"%@, completed." = "%@, đã hoàn thành.";
+"%@, high priority." = "%@, Ưu tiên cao.";
+
+// Unlocking premium
+"Get Unlimited Projects" = "Không giới hạn số dự án";
+"You can add three projects for free, or pay %@ to add unlimited projects." = "Bạn có thể tạo trước ba dự án miễn phí, hoặc trả %@ để không giới hạn số dự án được khởi tạo.";
+"If you already bought the unlock on another device, press Restore Purchases." = "Nếu bạn đã mua bản mở khóa trên một thiết bị khác, hãy nhấn nút 'Khôi phục các giao dịch'";
+"Restore Purchases" = "Khôi phục giao dịch";
+"Sorry, there was an error loading the store. Please try again later." = "Xin lỗi, đã xảy ra lỗi khi tải cửa hàng. Vui lòng thử lại sau.";
+"Buy: %@" = "Mua: %@";
+"Loading…" = "Đang tải…";
+"Thank you!" = "Xin cảm ơn!";
+"Thank you! Your request is pending approval, but you can carry on using the app in the meantime." = "Cảm ơn bạn! Yêu cầu của bạn đang chờ phê duyệt, nhưng bạn có thể tiếp tục sử dụng ứng dụng trong thời gian chờ đợi.";
+"Dismiss" = "Bỏ qua";
+

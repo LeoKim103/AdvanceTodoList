@@ -13,11 +13,11 @@
             <key>NSStringFormatValueTypeKey</key>
             <string>lld</string>
             <key>zero</key>
-            <string>Üres</string>
+            <string>Trống</string>
 <!--            <key>one</key>-->
 <!--            <string>1 item</string>-->
             <key>other</key>
-            <string>%lld tétel</string>
+            <string>%lld tác vụ</string>
         </dict>
     </dict>
 </dict>

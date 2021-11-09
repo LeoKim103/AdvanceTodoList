@@ -20,8 +20,8 @@ extension ProjectView {
 
         @Published var showingUnlockView = false
 
-        init(dataControler: DataController, showClosedProjects: Bool) {
-            self.dataController = dataControler
+        init(dataController: DataController, showClosedProjects: Bool) {
+            self.dataController = dataController
             self.showClosedProjects = showClosedProjects
 
             let request: NSFetchRequest<Project> = Project.fetchRequest()
@@ -30,7 +30,7 @@ extension ProjectView {
 
             projectController = NSFetchedResultsController(
                 fetchRequest: request,
-                managedObjectContext: dataControler.container.viewContext,
+                managedObjectContext: dataController.container.viewContext,
                 sectionNameKeyPath: nil,
                 cacheName: nil)
 

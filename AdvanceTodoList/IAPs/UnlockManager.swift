@@ -11,7 +11,7 @@ import StoreKit
 class UnlockManager: NSObject, ObservableObject, SKPaymentTransactionObserver, SKProductsRequestDelegate {
 
     enum RequestState {
-        case loading, loaded(SKProduct), failed(Error?), purchased, defferred
+        case loading, loaded(SKProduct), failed(Error?), purchased, deferred
     }
 
     private enum StoreError: Error {
@@ -75,7 +75,7 @@ class UnlockManager: NSObject, ObservableObject, SKPaymentTransactionObserver, S
                     queue.finishTransaction(transaction)
 
                 case .deferred:
-                    self.requestState = .defferred
+                    self.requestState = .deferred
 
                 default:
                     break
@@ -95,7 +95,7 @@ class UnlockManager: NSObject, ObservableObject, SKPaymentTransactionObserver, S
             }
 
             if response.invalidProductIdentifiers.isEmpty == false {
-                print("ALERT: Recieved invalid product identifiers: :\(response.invalidProductIdentifiers)")
+                print("ALERT: Received invalid product identifiers: :\(response.invalidProductIdentifiers)")
                 self.requestState = .failed(StoreError.invalidIdentifiers)
                 return
             }

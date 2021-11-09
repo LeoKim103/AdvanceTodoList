@@ -36,17 +36,17 @@ extension HomeView {
                 cacheName: nil)
 
             // fetching 10 item with highest priority
-            let itemResquest: NSFetchRequest<Item> = Item.fetchRequest()
+            let itemRequest: NSFetchRequest<Item> = Item.fetchRequest()
 
             let completedPredicate = NSPredicate(format: "completed = false")
             let openPredicate = NSPredicate(format: "project.closed = false")
-            itemResquest.predicate = NSCompoundPredicate(type: .and, subpredicates: [completedPredicate, openPredicate])
-            itemResquest.fetchLimit = 10
+            itemRequest.predicate = NSCompoundPredicate(type: .and, subpredicates: [completedPredicate, openPredicate])
+            itemRequest.fetchLimit = 10
 
-            itemResquest.sortDescriptors = [NSSortDescriptor(keyPath: \Item.priority, ascending: false)]
+            itemRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Item.priority, ascending: false)]
 
             itemController = NSFetchedResultsController(
-                fetchRequest: itemResquest,
+                fetchRequest: itemRequest,
                 managedObjectContext: dataController.container.viewContext,
                 sectionNameKeyPath: nil,
                 cacheName: nil)

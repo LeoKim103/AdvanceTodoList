@@ -43,10 +43,10 @@ struct HomeView: View {
             }
             .background(Color.systemGroupedBackground.ignoresSafeArea())
             .navigationTitle("Home")
-            .toolbar {
+//            .toolbar {
 //                Button("Add Data", action: viewModel.addSampleData)
-                Button("Delete All", action: viewModel.dataController.deleteAll)
-            }
+//                Button("Delete All", action: viewModel.dataController.deleteAll)
+//            }
 
         }
     }

@@ -15,7 +15,7 @@ struct ProjectView: View {
     static let closedTag: String? = "Closed"
 
     init(dataController: DataController, showClosedProjects: Bool) {
-        let viewModel = ViewModel(dataControler: dataController, showClosedProjects: showClosedProjects)
+        let viewModel = ViewModel(dataController: dataController, showClosedProjects: showClosedProjects)
         _viewModel = StateObject(wrappedValue: viewModel)
     }
 

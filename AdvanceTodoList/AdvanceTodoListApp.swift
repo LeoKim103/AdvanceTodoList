@@ -26,7 +26,11 @@ struct AdvanceTodoListApp: App {
                 .environment(\.managedObjectContext, dataController.container.viewContext)
                 .environmentObject(dataController)
                 .environmentObject(unlockManager)
-                .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification),
+                .onReceive(
+                    // Automatically save when we detect that we are no longer the foreground app
+                    // Use this rather than the scene phase API so that we can port to MacOS, where
+                    // scene phase won't detect our app losing focus as on macOS
+                    NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification),
                            perform: save)
         }
     }

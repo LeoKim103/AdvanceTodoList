@@ -22,7 +22,7 @@ class AdvanceTodoListUITests: XCTestCase {
         XCTAssertEqual(app.tabBars.buttons.count, 4, "There should be 4 tabs in the app.")
     }
 
-    func testOpenTanAddsprojects() {
+    func testOpenAndAddsProjects() {
         app.buttons["Open"].tap()
         XCTAssertEqual(app.tables.cells.count, 0, "There should be no list row initially")
 
@@ -40,7 +40,20 @@ class AdvanceTodoListUITests: XCTestCase {
         XCTAssertEqual(app.tables.cells.count, 1, "There should be 1 list row initially")
 
         app.buttons["Add New Item"].tap()
-        XCTAssertEqual(app.tables.cells.count, 2, "There should be 1 list row initially")
+        XCTAssertEqual(app.tables.cells.count, 2, "There should be 2 list row")
+    }
+
+    func testClosingProject() {
+        app.buttons["Open"].tap()
+        XCTAssertEqual(app.tables.cells.count, 0, "There should be no list row initially.")
+
+        app.buttons["Add Project"].tap()
+        XCTAssertEqual(app.tables.cells.count, 1, "There should be 1 list row initially")
+
+        app.buttons["Compose"].tap()
+        app.buttons["Close this project"].tap()
+        XCTAssertEqual(app.tables.cells.count, 0, "There should be no list row.")
+
     }
 
 //    func testEditingProjectUpdatesCorrectly() {
